@@ -1,0 +1,91 @@
+<!--this page used for display the product details -->
+
+<div>
+    <!-- here uses the helperArray for storing the how many number of product-->
+
+    <div class="image_block">
+        <div>
+            <div class="catagory_image">
+                <a href="bike" class="image_list">
+                    <img class="image_group" src="../../assets/e1.jpg">
+                    <span class="image_group_name">
+                        "Electronics"
+                    </span>
+                </a>
+            </div>
+            <div class="catagory_image">
+                <a href="watch" class="image_list">
+                    <img class="image_group" src="../../assets/31.png">
+                    <span class="image_group_name">
+                        "Footwear"
+                    </span>
+                </a>
+            </div>
+            <div class="catagory_image">
+                <a href="car" class="image_list">
+                    <img class="image_group" src="../../assets/c1.jpg">
+                    <span class="image_group_name">
+                        "Cloths"
+                    </span>
+                </a>
+            </div>
+            <div class="catagory_image">
+                <a href="/shoes" class="image_list">
+                    <img class="image_group" src="../../assets/b1.png">
+                    <span class="image_group_name">
+                        "Books"
+                    </span>
+                </a>
+            </div>
+            <div class="catagory_image">
+                <a href="/laptop" class="image_list">
+                    <img class="image_group" src="../../assets/v2.png">
+                    <span class="image_group_name">
+                        "Vehicle"
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="All_procuct">
+      <h3> All Products</h3> 
+    </div>
+    <div *ngFor="let item of catalogueObj;let i=index;" >
+
+    <div class="body">
+          <div class="img">
+              <!-- display the product name-->
+              <div class="imgName">{{item.itemName|uppercase}}</div>
+              <div class="imgdisplay">
+                      <img class="product_img" [src]="images[item.imageName]"><!--display the image -->
+              </div>
+              <div class="deatail"><p class="product_detail_name">Product Details</p>
+                    <div class="product_detail">
+                       <table>
+                           <tr>
+                               <td>Brand :</td>
+                               <!-- display the Brand Name-->
+                               <td>{{item.brandName}}</td>
+                           </tr>
+                           <!-- <tr>
+                                <td>Type :</td>
+                               
+                                <td>{{item.color}}</td>
+                           </tr> -->
+                           <tr>
+                                <td>Price :</td>
+                                <!-- display the price of the product -->
+                                <td>${{item.price}}</td>
+                           </tr>
+                           <tr>
+                                <td>Details :</td>
+                                <!-- display the details description of the product -->
+                                <td>{{item.detail}}</td>
+                           </tr>
+                       </table> 
+                    </div> 
+             </div>
+        </div>
+    </div>
+    </div>
+</div>
